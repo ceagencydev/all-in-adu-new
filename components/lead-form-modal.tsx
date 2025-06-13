@@ -71,6 +71,17 @@ export function LeadFormModal({
           })
           console.log("Google Ads conversion tracked successfully")
         }
+
+        // Track Facebook Pixel lead event
+        if (typeof window !== "undefined" && window.fbq) {
+          window.fbq("track", "Lead", {
+            content_name: "ADU Consultation Request",
+            content_category: "Form Submission",
+            value: 150.0,
+            currency: "USD",
+          })
+          console.log("Facebook Pixel lead event tracked successfully")
+        }
       } else {
         console.error("Failed to send lead data:", response.statusText)
       }
@@ -85,11 +96,30 @@ export function LeadFormModal({
   const handleContactMeInstead = async () => {
     setIsSubmitting(true)
 
+    // Track Facebook Pixel contact preference event
+    if (typeof window !== "undefined" && window.fbq) {
+      window.fbq("track", "Contact", {
+        content_name: "Contact Me Request",
+        content_category: "Contact Preference",
+      })
+    }
+
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 800))
 
     setIsSubmitting(false)
     setCurrentStep(3)
+  }
+
+  const trackPhoneCall = () => {
+    // Track Facebook Pixel phone call event
+    if (typeof window !== "undefined" && window.fbq) {
+      window.fbq("track", "Contact", {
+        content_name: "Phone Call",
+        content_category: "Direct Call",
+        preferred_contact_method: "phone",
+      })
+    }
   }
 
   const resetForm = () => {
@@ -202,6 +232,7 @@ export function LeadFormModal({
                 <p className="text-gray-600 mb-2">Available during business hours (9AM-5PM PST)</p>
                 <a
                   href="tel:9496494751"
+                  onClick={trackPhoneCall}
                   className="inline-flex items-center justify-center w-full h-14 md:h-16 bg-blue-600 hover:bg-blue-700 text-white text-lg md:text-xl font-semibold rounded-xl transition-colors"
                 >
                   <Phone className="mr-2 w-5 h-5" />
