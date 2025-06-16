@@ -19,6 +19,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        {/* Meta Domain Verification */}
+        <meta name="facebook-domain-verification" content="wgnfnf81c501b98wk7wqhf50t8rlyo" />
+
         {/* Google tag (gtag.js) - Google Ads */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=AW-16893802236" strategy="afterInteractive" />
         <Script id="google-ads" strategy="afterInteractive">
