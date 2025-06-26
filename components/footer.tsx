@@ -42,7 +42,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">License Information</h3>
             <div className="space-y-2 text-sm text-gray-400">
-              <div>Contractor License #123456</div>
+              <div>Contractor License #1129298</div>
               <div>Fully Bonded and Insured</div>
               <div className="mt-4 text-xs">Serving Orange, Riverside, Los Angeles & San Diego Counties</div>
             </div>
