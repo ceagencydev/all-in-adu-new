@@ -65,6 +65,18 @@ export function HeroSection() {
                   priority
                 />
               </div>
+
+              {/* Add this bubble overlay */}
+              <div className="absolute top-4 right-4 bg-white rounded-full px-4 py-3 shadow-lg border-2 border-blue-100">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600">40%</div>
+                  <div className="text-xs font-semibold text-gray-700 leading-tight">
+                    Average Property
+                    <br />
+                    Value Increase
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

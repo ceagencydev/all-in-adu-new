@@ -53,6 +53,9 @@ export function LeadFormModal({
           },
           body: JSON.stringify({
             fullName: formData.fullName,
+            name: formData.fullName,
+            first_name: formData.fullName.split(" ")[0] || formData.fullName,
+            last_name: formData.fullName.split(" ").slice(1).join(" ") || "",
             phone: formData.phone,
             email: formData.email,
             source: "ADU Landing Page Lead Form",
